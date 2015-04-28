@@ -30,6 +30,7 @@ public class MainMenuMDI extends javax.swing.JFrame {
     private void initComponents() {
 
         desktopPane = new javax.swing.JDesktopPane();
+        jButton1 = new javax.swing.JButton();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         openMenuItem = new javax.swing.JMenuItem();
@@ -51,6 +52,15 @@ public class MainMenuMDI extends javax.swing.JFrame {
 
         desktopPane.setMinimumSize(new java.awt.Dimension(2000, 2000));
         desktopPane.setPreferredSize(new java.awt.Dimension(900, 900));
+
+        jButton1.setText("Agenda de citas");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        desktopPane.add(jButton1);
+        jButton1.setBounds(50, 70, 120, 90);
 
         menuBar.setOpaque(false);
 
@@ -157,7 +167,7 @@ public class MainMenuMDI extends javax.swing.JFrame {
         obj.setVisible(true);
         
         desktopPane.add(obj);
-        
+        desktopPane.repaint();
         
         
         
@@ -166,6 +176,25 @@ public class MainMenuMDI extends javax.swing.JFrame {
     private void aboutMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutMenuItemActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_aboutMenuItemActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        AgendaCitas obj = new AgendaCitas();
+        obj.setVisible(true);
+        
+        //coordenadas para mostrar
+        obj.setBounds(50, 50, 1000, 500);
+        
+        
+        //opcion de menu de maximizar
+        obj.setMaximizable(true);
+        
+        //tamaño del internal frame
+        obj.setSize(900, 500);
+        obj.setVisible(true);
+        
+        desktopPane.add(obj);
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -213,6 +242,7 @@ public class MainMenuMDI extends javax.swing.JFrame {
     private javax.swing.JMenuItem exitMenuItem;
     private javax.swing.JMenu fileMenu;
     private javax.swing.JMenu helpMenu;
+    private javax.swing.JButton jButton1;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem openMenuItem;
     private javax.swing.JMenuItem pasteMenuItem;
