@@ -46,7 +46,7 @@ public class Registro extends javax.swing.JFrame {
         txtTelefono = new javax.swing.JTextField();
         txtCelular = new javax.swing.JTextField();
         txtEmail = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btnRegistro = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         JCalendarCita = new com.toedter.calendar.JCalendar();
         lblFecha = new javax.swing.JLabel();
@@ -76,7 +76,7 @@ public class Registro extends javax.swing.JFrame {
 
         txtNombre.setToolTipText(""); // NOI18N
 
-        jButton1.setText("Agendar");
+        btnRegistro.setText("Agendar");
 
         jButton2.setText("Limpiar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -139,7 +139,7 @@ public class Registro extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(barFormulario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(2147483175, 2147483175, 2147483175))
@@ -202,7 +202,7 @@ public class Registro extends javax.swing.JFrame {
                 .addComponent(barFormulario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
@@ -233,29 +233,29 @@ public class Registro extends javax.swing.JFrame {
 
         private void llenarSpinner(){
             int horas=0, minutos=0;
-            SpinnerModel sm = spinerHora.getModel();
-          
-                spinerHora.setEditor(jButton1);
-                   spinerHora.setModel(sm);
-           
             
+            String horasMatriz[][] = new String[12][60];
+
             for(int i=0; i<12; i++){
                 for(int j=0; j<60; j++){
                     
                     if(i<=9){
                         if(j<=9){
-                            spinerHora.setValue("0"+i+":0"+j);
-                            System.out.println("0"+i+":0"+j);
+                            horasMatriz[i][j] = "0"+i+":0"+j;
+                            System.out.println(horasMatriz[i][j]);
                         }else{
-                            System.out.println("0"+i+":"+j);  
+                            horasMatriz[i][j] = "0"+i+":"+j;
+                            System.out.println(horasMatriz[i][j]);  
                         }
                         
                         
                     }else{
                         if(j<=9){
-                            System.out.println(i+":0"+j);
+                            horasMatriz[i][j] = i+":0"+j;
+                            System.out.println(horasMatriz[i][j]);
                         }else{
-                            System.out.println(i+":"+j);
+                            horasMatriz[i][j] = i+":"+j;
+                            System.out.println(horasMatriz[i][j]);
                         }
                     }
                     
@@ -432,7 +432,7 @@ public class Registro extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.toedter.calendar.JCalendar JCalendarCita;
     private javax.swing.JProgressBar barFormulario;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnRegistro;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
